@@ -30,11 +30,14 @@ console.log('example task:', processFirstItem(['foo','bar'],function(str){return
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+    counter1 is a variable that calls the function counterMaker, whereas counter2 is a function itself.
   
   2. Which of the two uses a closure? How can you tell?
-  
+    counter1 uses a closure. It is returning a function that references the count variable. Counter 2 is just a simple function that returns a variable.
+
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+    counter1 is preferable if you need to reference the count variable outside the scope of counterMaker. counter2 is preferable if you do not need to take advantage of using a closure, as closures negatively affect script performance. 
 */
 
 // counter1 code
@@ -55,6 +58,7 @@ function counter2() {
 }
 
 
+
 /* ⚾️⚾️⚾️ Task 2: inning() ⚾️⚾️⚾️
 Use the inning function below to do the following:
   1. Return a random whole number of points between 0 and 2 scored by one team in an inning
@@ -64,8 +68,8 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+  return Math.floor(Math.random() * 3);
 }
 
 
