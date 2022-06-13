@@ -87,10 +87,19 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*Code Here*/){
-  /*Code Here*/
+function finalScore(callback,inningsPlayed){
+  let maxInnings = inningsPlayed;
+  console.log(`Max Innings: ${maxInnings}`)
+  let scoreObj = {};
+  scoreObj.Home = 0;
+  scoreObj.Away = 0;
+  for (let i=1; i<inningsPlayed; i++){
+    scoreObj.Home = scoreObj.Home + callback();
+    console.log(scoreObj);
+    scoreObj.Away = scoreObj.Away + callback();
+  }
+  return scoreObj;
 }
-
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
